@@ -1,14 +1,25 @@
-import React from "react";
+import { useEffect } from "react";
 
 // Import Formik and Yup
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-const AddNote = (props) => {
+import { useParams } from "react-router-dom";
+
+
+
+const EditNote = (props) => {
   // add form logic here
 
+  const params = useParams()
+
+  const currentValues = () => {
+      console.log(props.notes === Number(params.id))
+  }
+
+
   const initialValues = {
-    title: "",
-    content: "",
+    title: "kfd",
+    content: "jdfj",
   };
 
   const validationScheme = Yup.object({
@@ -17,7 +28,7 @@ const AddNote = (props) => {
   });
 
   const handleSubmit = (values) => {
-    props.createNote({
+    props.EditNote({
       title: values.title,
       content: values.content,
     });
@@ -46,7 +57,7 @@ const AddNote = (props) => {
           />
           <ErrorMessage component="div" name='content' className='text-red-300'/>
           <button className="px-12 py-2 rounded bg-yellow-500" type="submit">
-            Add Note
+            Edit Note
           </button>
         </Form>
       </Formik>
@@ -54,4 +65,4 @@ const AddNote = (props) => {
   );
 };
 
-export default AddNote;
+export default EditNote;
