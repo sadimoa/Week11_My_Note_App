@@ -71,7 +71,6 @@ Examine all the components we created for you, you will not need to create more 
 
 
 ## STRETCH PROBLEMS
-
 - [ ] Look at `App.js` and find the Stretch section. You will need to create a method to update each note.
 - [ ] Change the color of the note being edited.
 - [ ] Use [React Toast Library](https://react-hot-toast.com/) to show notifications such as "You have successfully deleted the note!"

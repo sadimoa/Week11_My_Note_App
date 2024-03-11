@@ -1,6 +1,7 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 function Notes(props) {
   return (
     <div>
@@ -12,9 +13,12 @@ function Notes(props) {
             <p className="font-light pt-2">{note.content}</p>
             <div className=" mt-20 flex flex-row items-center justify-center gap-3">
               <Link to={`editeNote/${note.id}`}>
-              <FaEdit className=" text-xl " />
+                <FaEdit className=" text-xl " />
               </Link>
-              <FaTrash className="text-xl" onClick={() => props.deleteNote(note.id)}/>
+              <FaTrash
+                className="text-xl"
+                onClick={() => props.deleteNote(note.id)}
+              />
             </div>
           </div>
         ))}
